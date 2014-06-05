@@ -31,7 +31,8 @@ a directory titled "reduce_store".  A shared list of locks is used to prevent
 mappers from simultaneously writing to the same reduce_store CSV file.
 
 Reducers are called to consolidate the output from the mappers.
-Reducers store their results in a CSV filed located in the "features" directory.
+Reducers store their output in memory.  The output from the reduce step is consolidated
+into a single dataframe and written to a CSV filed located in the "features" directory.
 
 
 Dependencies
