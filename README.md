@@ -14,7 +14,7 @@ This tool was built for use with the
 [Acquire Valued Shoppers Dataset](https://www.kaggle.com/c/acquire-valued-shoppers-challenge)
 hosted by Kaggle.
 
-* Download that dataset and save it to the "data" directory.
+* Download the Acquire Valued Shoppers Dataset and save it to the "data" directory.
 * Run the main() function from the dataStoreSetup.py to populate your "chunks" directory.
 * Use buildFeatures.py to generate some example features.
 
