@@ -8,11 +8,20 @@ import numpy,pandas,scipy
 import dataFrameTools
 
 ########################################################################
-# mapReduce
+# Init
 ########################################################################
 
 base_dir = 'data/'
 reduce_store_path = base_dir + 'reduce_store/'
+
+num_buckets=131
+locks = {i:Lock() for i in xrange(num_buckets)}
+
+map_file_list = [base_dir + 'chunks/' + str(r) + '.csv'
+    for r in range(1,58+1)]
+reduce_file_list = [reduce_store_path + str(r) + '.csv'
+    for r in range(num_buckets)]
+
 
 offers = pandas.read_csv(base_dir+'offers.csv')
 offers = dataFrameTools.build_id_column(offers,['category','brand','company'],'offer_item_id')
@@ -35,13 +44,10 @@ history = history.rename(columns={'chain':'offer_chain',
     'category':'offer_category'})
 
 
-num_buckets=131
-locks = {i:Lock() for i in xrange(num_buckets)}
+########################################################################
+# mapReduce
+########################################################################
 
-map_file_list = [base_dir + 'chunks/' + str(r) + '.csv'
-    for r in range(1,58+1)]
-reduce_file_list = [reduce_store_path + str(r) + '.csv'
-    for r in range(num_buckets)]
 
 def initialize_reduce_store(reduce_file_list,columns):
     for file_path in reduce_file_list:

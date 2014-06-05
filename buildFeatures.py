@@ -14,10 +14,10 @@ from mapReduce import num_buckets
 # Setup
 ########################################################################
 
-base_dir = '../data/'
+base_dir = 'data/'
 reduce_store_path = base_dir + 'reduce_store/'
 
-map_file_list = [base_dir + 'transaction_chunks/' + str(r) + '.csv'
+map_file_list = [base_dir + 'chunks/' + str(r) + '.csv'
     for r in range(1,58+1)]
 reduce_file_list = [reduce_store_path + str(r) + '.csv'
     for r in range(num_buckets)]

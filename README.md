@@ -1,13 +1,15 @@
 
 A Python MapReduce Tool
-================================
+=======================
 
-This package provides mapReduce functionality on a Mac or PC.  MapReduce can
-speed data work on machines that have sufficient memory and multiple cores.
-
+This package provides mapReduce functionality for Python users on a standard Mac.
+MapReduce can speed data work on machines that have sufficient memory and multiple cores.
+The tool is built for use with the [Acquire Valued Shoppers Dataset](https://www.kaggle.com/c/acquire-valued-shoppers-challenge)
+and can easily be hacked for use in other applications.
 
 How to Use
 ----------
+
 This tool was built for use with the
 [Acquire Valued Shoppers Dataset](https://www.kaggle.com/c/acquire-valued-shoppers-challenge)
 hosted by Kaggle.
